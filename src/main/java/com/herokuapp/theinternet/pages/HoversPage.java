@@ -12,6 +12,7 @@ public class HoversPage extends BasePageObject {
 	private String pageUrl = "http://the-internet.herokuapp.com/hovers";
 
 	private By avatarLocator = By.xpath("//div[@class='figure']");
+	//The dot "." is important to specify which avatar the test need to look for
 	private By viewProfileLinkLocator = By.xpath(".//a[contains(text(),'View profile')]");
 
 	public HoversPage(WebDriver driver, Logger log) {

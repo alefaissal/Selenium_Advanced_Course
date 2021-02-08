@@ -30,30 +30,30 @@ public class BrowserDriverFactory {
 
 		switch (browser) {
 		case "chrome":
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 			driver.set(new ChromeDriver());
 			break;
 
-		case "firefox":
-			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-			driver.set(new FirefoxDriver());
-			break;
+//		case "firefox":
+//			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
+//			driver.set(new FirefoxDriver());
+//			break;
 			
 		case "chromeheadless":
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--headless");
 			driver.set(new ChromeDriver(chromeOptions));
 			break;
 
-		case "firefoxheadless":
-			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-			FirefoxBinary firefoxBinary = new FirefoxBinary();
-			firefoxBinary.addCommandLineOptions("--headless");
-			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			firefoxOptions.setBinary(firefoxBinary);
-			driver.set(new FirefoxDriver(firefoxOptions));
-			break;
+//		case "firefoxheadless":
+//			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
+//			FirefoxBinary firefoxBinary = new FirefoxBinary();
+//			firefoxBinary.addCommandLineOptions("--headless");
+//			FirefoxOptions firefoxOptions = new FirefoxOptions();
+//			firefoxOptions.setBinary(firefoxBinary);
+//			driver.set(new FirefoxDriver(firefoxOptions));
+//			break;
 
 		case "phantomjs":
 			System.setProperty("phantomjs.binary.path", "src/main/resources/phantomjs.exe");
@@ -67,7 +67,7 @@ public class BrowserDriverFactory {
 
 		default:
 			System.out.println("Do not know how to start: " + browser + ", starting chrome.");
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 			driver.set(new ChromeDriver());
 			break;
 		}
@@ -80,7 +80,7 @@ public class BrowserDriverFactory {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("user-data-dir=src/main/resources/Profiles/" + profile);
 
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 		driver.set(new ChromeDriver(chromeOptions));
 		return driver.get();
 	}
@@ -92,7 +92,7 @@ public class BrowserDriverFactory {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
 		driver.set(new ChromeDriver(chromeOptions));
 		return driver.get();
 	}

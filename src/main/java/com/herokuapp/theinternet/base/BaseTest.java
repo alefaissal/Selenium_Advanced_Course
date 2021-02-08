@@ -12,6 +12,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+// Next line is to have the listener in each testSuite, without have to add the <listeners> tag on each one.
 @Listeners({ com.herokuapp.theinternet.base.TestListener.class })
 public class BaseTest {
 
