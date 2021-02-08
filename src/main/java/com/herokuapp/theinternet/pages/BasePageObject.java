@@ -131,7 +131,7 @@ public class BasePageObject {
 		find(locator).sendKeys(key);
 	}
 
-	/** Press Key using Actions class */
+	/** Press Key using Actions class - no direct use of Keyboard or mouse */
 	public void pressKeyWithActions(Keys key) {
 		log.info("Pressing " + key.name() + " using Actions class");
 		Actions action = new Actions(driver);
